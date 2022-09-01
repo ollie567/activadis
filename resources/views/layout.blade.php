@@ -29,9 +29,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
-                </li>
                 @else
                 <li class="nav-item active">
                     <a class="nav-link" href="/logout">Uitloggen <span class="sr-only">(current)</span></a>
@@ -39,12 +36,6 @@
                 @endif
                 <li class="nav-item active">
                     <a class="nav-link" href="/informatie">Informatie <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/tickets">Tickets <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/nieuwsbrief">Nieuwsbrief <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/contact">Contact <span class="sr-only">(current)</span></a>
@@ -72,11 +63,8 @@
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
                 <li class="nav-item"><a href="/informatie" class="nav-link px-2 text-muted">Informatie</a></li>
-                <li class="nav-item"><a href="/tickets" class="nav-link px-2 text-muted">Tickets</a></li>
-                <li class="nav-item"><a href="/nieuwsbrief" class="nav-link px-2 text-muted">Nieuwsbrief</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link px-2 text-muted">Contact</a></li>
             </ul>
-            <p class="text-center text-muted">© 2021 Legoland, Inc</p>
         </footer>
     </div>
 
