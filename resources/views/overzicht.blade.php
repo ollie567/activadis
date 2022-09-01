@@ -7,24 +7,28 @@
 
 
             <div class="row">
+
                     <div class="col-sm-6 ">
                         <div class="attractions">
-                            <div class="card" style="width: 100%;">
-                                <img src="https://www.trackjackeurope.com/wp-content/uploads/2020/09/jetski.jpg" class="card-img-top" style="height: 400px;" alt="attraction">
-                                <div class="card-body" style="height: 200px;">
-                                    <h5 class="card-title">Jet ski</h5>
-                                    <p class="card-text">jet</p>
-{{--                                    <a href="{{ route('attractieDetails' , ['attractie_id' => $data->attraction_id]) }} ">--}}
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Bekijk meer</button>
-{{--                                    </a>--}}
+                            <a href="/adminDetail">
+                                <div class="card" style="width: 100%;">
+                                    <img src="https://www.trackjackeurope.com/wp-content/uploads/2020/09/jetski.jpg" class="card-img-top" style="height: 400px;" alt="attraction">
+                                    <div class="card-body" style="height: 200px;">
+                                        <h5 class="card-title">Jet ski</h5>
+                                        <p class="card-text">
+                                            Locatie: aan het meer  ||  incl eten: ja<br>
+                                            min deelnemers: 10 || max deelnemers: 20<br>
+                                            kosten: 50 || Benodigheden: rijbewijs<br>
+                                            begintijd: 10:00 || eindtijd: 11:00<br>
+                                            omschrijving: jet skieën.
+                                        </p>
 
+
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
-
-
-
 
             </div>
 @endsection
