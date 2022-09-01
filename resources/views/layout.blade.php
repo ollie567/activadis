@@ -35,7 +35,7 @@
                 </li>
                 @endif
                 <li class="nav-item active">
-                    <a class="nav-link" href="/informatie">Informatie <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/overzicht">Overzicht <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/contact">Contact <span class="sr-only">(current)</span></a>
@@ -62,7 +62,7 @@
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="/informatie" class="nav-link px-2 text-muted">Informatie</a></li>
+                <li class="nav-item"><a href="/overzicht" class="nav-link px-2 text-muted">Overzicht</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link px-2 text-muted">Contact</a></li>
             </ul>
         </footer>
