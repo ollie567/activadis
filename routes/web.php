@@ -37,3 +37,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::post('/overzicht', function () {
+    return view('overzicht');
+});

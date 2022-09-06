@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh">
-        <form action="/login/auth" method="POST">
+        <form action="/overzicht" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="inputEmail">Email</label>
                 <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
