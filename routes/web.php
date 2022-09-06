@@ -41,3 +41,6 @@ Route::get('/adminToevoegen', function () {
     return view('adminToevoegen');
 });
 
+Route::post('/overzicht', function () {
+    return view('overzicht');
+});
