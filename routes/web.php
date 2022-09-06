@@ -37,3 +37,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/adminToevoegen', function () {
+    return view('adminToevoegen');
+});
+
