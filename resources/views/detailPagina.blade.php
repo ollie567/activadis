@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="w-100 text-center m-2">Jet ski</h1>
 <div class="w-100 d-flex justify-content-center">
-    
+
         <div id="carouselExampleIndicators" class="carousel slide w-50 mt-3" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -12,7 +12,9 @@
             </div>
         </div>
     </div>
-
+    <div style="width: 100%">
+        <button style="margin-left: 500px; width: 500px">Aanmelden</button>
+    </div>
     <div class="mt-3 d-flex flex-row flex-wrap justify-content-center">
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">

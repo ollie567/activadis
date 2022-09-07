@@ -21,18 +21,21 @@
                                         min deelnemers: 10 || max deelnemers: 20<br>
                                         kosten: 50 || Benodigheden: rijbewijs<br>
                                         begintijd: 10:00 || eindtijd: 11:00<br>
-                                       
+
                                     </p>
 
 
                                 </div>
                             </div>
                         </a>
+                        <div style="width: 100%; margin-bottom: 10px">
+                            <button style="width: 100%">Aanmelden</button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-sm-6 ">
-                    <div class="attractions">
+                    <div class="attractions align-middle">
                         <a href="/adminDetail">
                             <div class="card" style="width: 100%;">
                                 <img src="https://www.vakantie-met-kinderen.com/images/patrick-waterski-twente-800.jpg" class="card-img-top" style="height: 400px;" alt="attraction">
@@ -46,10 +49,12 @@
                                         omschrijving: water skieën.
                                     </p>
 
-
                                 </div>
                             </div>
                         </a>
+                        <div style="width: 100%">
+                            <button style="width: 100%">Aanmelden</button>
+                        </div>
                     </div>
                 </div>
 
@@ -72,6 +77,9 @@
                                 </div>
                             </div>
                         </a>
+                        <div style="width: 100%">
+                            <button style="width: 100%">Aanmelden</button>
+                        </div>
                     </div>
                 </div>
 
