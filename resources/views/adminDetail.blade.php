@@ -24,13 +24,13 @@
 
         <div class="form-group">
             <label for="price">minimaal aantal deelnemers</label>
-            <input type="text" class="form-control" name="attractionImage"
-                   value="">
+            <input type="number" class="form-control" name="attractionImage"
+                   value="0">
         </div>
         <div class="form-group">
             <label for="price">max deelnemers</label>
-            <input type="text" class="form-control" name="attractionLoation"
-                   value="">
+            <input type="number" class="form-control" name="attractionLoation"
+                   value="0">
         </div>
         <div class="form-group">
             <label for="price">kosten</label>
@@ -59,7 +59,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary mb-2">Edit activiteit</button>
-      
+
     </form>
 </div>
 
