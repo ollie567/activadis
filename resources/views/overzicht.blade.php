@@ -36,7 +36,7 @@
 
                 <div class="col-sm-6 ">
                     <div class="attractions align-middle">
-                        <a href="/adminDetail">
+                        <a href="/detailPagina">
                             <div class="card" style="width: 100%;">
                                 <img src="https://www.vakantie-met-kinderen.com/images/patrick-waterski-twente-800.jpg" class="card-img-top" style="height: 400px;" alt="attraction">
                                 <div class="card-body" style="height: 200px;">
@@ -60,7 +60,7 @@
 
                 <div class="col-sm-6 ">
                     <div class="attractions">
-                        <a href="/adminDetail">
+                        <a href="/detailPagina">
                             <div class="card" style="width: 100%;">
                                 <img src="https://static.nationalgeographic.nl/files/styles/image_3200/public/duiken-in-ondergelopen-park-in-oostenrijk-1649.webp?w=1600&h=900" class="card-img-top" style="height: 400px;" alt="attraction">
                                 <div class="card-body" style="height: 200px;">
