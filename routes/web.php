@@ -48,3 +48,11 @@ Route::get('/adminToevoegen', function () {
 Route::post('/overzicht', function () {
     return view('overzicht');
 });
+
+Route::post('/adminoverzicht', function () {
+    return view('adminoverzicht');
+});
+
+Route::get('/detailPagina', function () {
+    return view('detailPagina');
+});

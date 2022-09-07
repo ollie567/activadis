@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh">
-        <form action="/overzicht" method="POST">
+        <form action="/adminoverzicht" method="POST">
             @csrf
             <div class="form-group">
                 <label for="inputEmail">Email</label>
