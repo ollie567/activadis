@@ -4,24 +4,24 @@
     <h1 class="w-100 text-center m-2">Evenementen</h1>
     <div class="album py-5 bg-light">
         <div class="container">
-
+           <?php $activiteiten = DB::table('activiteiten')->select('ID','activiteitnaam', 'activiteitlocatie', 'activeitomschrijving', 'activeit-eten', 'activiteitmindeelnemers', 'activiteitmaxdeelnemers', 'activiteitkosten', 'activiteitbenodigheden', 'activiteitbegintijd', 'activiteiteindtijd', 'activiteitafbeelding')->get();?>
 
             <div class="row">
-
+                @foreach($activiteiten as $activ)
                     <div class="col-sm-6 ">
                     <div class="attractions">
                         <a href="/detailPagina">
                             <div class="card" style="width: 100%;">
                                 <img src="https://www.trackjackeurope.com/wp-content/uploads/2020/09/jetski.jpg" class="card-img-top" style="height: 400px;" alt="attraction">
                                 <div class="card-body" style="height: 200px;">
-                                    <h5 class="card-title">Jet ski</h5>
+                                    <h5 class="card-title">{{$activ->activiteitnaam}}</h5>
                                     <p class="card-text">
-                                        omschrijving: jet skieën.
-                                        Locatie: aan het meer  ||  incl eten: ja<br>
-                                        min deelnemers: 10 || max deelnemers: 20<br>
-                                        kosten: 50 || Benodigheden: rijbewijs<br>
-                                        begintijd: 10:00 || eindtijd: 11:00<br>
-                                       
+                                        omschrijving: {{$activ->activeitomschrijving}}
+                                        Locatie: {{$activ->activiteitlocatie}}  ||  incl eten: {{$activ->activiteit-eten}} <br>
+                                        min deelnemers: {{$activ->activiteitmindeelnemers}}  || max deelnemers: {{$activ->activiteitmaxdeelnemers}} <br>
+                                        kosten: €{{$activ->activiteitkosten}}  || Benodigheden: {{$activ->activiteitBenodigheden}} <br>
+                                        begintijd: {{$activ->activiteitbegintijd}}  || eindtijd: {{$activ->activiteiteindtijd}} <br>
+
                                     </p>
 
 
@@ -30,6 +30,8 @@
                         </a>
                     </div>
                 </div>
+                @endforeach
+
 
                 <div class="col-sm-6 ">
                     <div class="attractions">
