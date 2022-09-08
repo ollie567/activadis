@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('activiteiten', function (Blueprint $table) {
             $table->id('ID');
             $table->string('activiteitnaam');
+            $table->string('activiteitlocatie');
             $table->string('activeitomschrijving');
             $table->boolean('activeit-eten');
             $table->integer('activiteitmindeelnemers');
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->string('activiteitbenodigheden');
             $table->string('activiteitbegintijd');
             $table->string('activiteiteindtijd');
+            $table->string('activiteitafbeelding');
             $table->timestamps();
         });
     }
