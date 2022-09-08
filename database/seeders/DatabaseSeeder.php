@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+//        DB::table('gebruikers')->insert([
+//            'gebruikersnaam' => 45,
+//            'ticket_name' => 'volwassen',
+//            'ticket_category' => 'ticket_2',
+//            'ticket_text1' => 'boven 12 jaar',
+//            'ticket_text2' => 'toegang tot alle attracties'
+//        ]);
     }
 }
