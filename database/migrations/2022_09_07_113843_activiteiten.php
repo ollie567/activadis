@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('activiteitnaam');
             $table->string('activiteitlocatie');
             $table->string('activeitomschrijving');
-            $table->boolean('activeit-eten');
+            $table->boolean('activeiteten');
             $table->integer('activiteitmindeelnemers');
             $table->integer('activiteitmaxdeelnemers');
             $table->float('activiteitkosten');
