@@ -40,7 +40,7 @@
                                     <p class="card-text">
                                         Locatie: aan het meer  ||  incl eten: ja<br>
                                         min deelnemers: 10 || max deelnemers: 20<br>
-                                        kosten: 50 || Benodigheden: rijbewijs<br>
+                                        kosten: 50 || Benodigheden: <br>
                                         begintijd: 10:00 || eindtijd: 11:00<br>
                                         omschrijving: water skieën.
                                     </p>
