@@ -22,8 +22,8 @@
                     @endif
                     <div class="col-sm-6 ">
                     <div class="attractions">
-                        <form action="/detailPagina">
-                        <a href="/detailPagina">
+
+                        <a href="/detailPagina?id=<?php echo $id?>">
                             <div class="card" style="width: 100%;">
                                 <img src="{{$activ->activiteitafbeelding}}" class="card-img-top" style="height: 400px;" alt="attraction">
                                 <div class="card-body" style="height: 200px;">
@@ -41,7 +41,9 @@
                                 </div>
                             </div>
                         </a>
-                        </form>
+                        <div style="width: 100%">
+                            <button style="width: 100%">Aanmelden</button>
+                        </div>
                     </div>
                     </div>
 

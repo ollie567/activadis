@@ -1,13 +1,23 @@
 @extends('layout')
 
 @section('content')
-<h1 class="w-100 text-center m-2">Jet ski</h1>
+    <?php
+    $detail = DB::table('activiteiten')->where('ID', $_GET['id'])->get();
+    ?>
+@foreach($detail as $activ)
+    @if($activ->activiteiteten = true)
+        <?php $eten = 'ja'?>
+    @else
+        <?php $eten = 'nee'?>
+    @endif
+<h1 class="w-100 text-center m-2">{{$activ->activiteitnaam}}</h1>
 <div class="w-100 d-flex justify-content-center">
-    
+
+
         <div id="carouselExampleIndicators" class="carousel slide w-50 mt-3" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://www.trackjackeurope.com/wp-content/uploads/2020/09/jetski.jpg" alt="First slide" style="height: 600px;">
+                    <img class="d-block w-100" src="{{$activ->activiteitafbeelding}}" alt="First slide" style="height: 600px;">
                 </div>
             </div>
         </div>
@@ -17,7 +27,7 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">locatie</h4></div>
-                <p class="card-text">stroombroek in braamt</p>
+                <p class="card-text">{{$activ->activiteitlocatie}}</p>
                 <a href="#" class="btn btn-primary">Map</a>
             </div>
         </div>
@@ -25,15 +35,15 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">Inclusief eten</h4></div>
-                <p class="card-text">ja het evenement heeft eten en drinken erbij</p>
+                <p class="card-text"><?php echo $eten?> het evenement heeft eten en drinken erbij</p>
             </div>
         </div>
 
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">minimaal en maximaal aantal deelnemers</h4></div>
-                <p class="card-text">er moeten minimaal 10 mense zich aanmelden
-                    voor dit evenement en er kunnen maximaal 30 mensen hieraan deelnemen
+                <p class="card-text">er moeten minimaal {{$activ->activiteitmindeelnemers}} mensen zich aanmelden
+                    voor dit evenement en er kunnen maximaal {{$activ->activiteitmaxdeelnemers}} mensen hieraan deelnemen
                 </p>
                 <a href="#" class="btn btn-primary">Meer informatie</a>
             </div>
@@ -42,7 +52,7 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">Speciale benodigheden</h4></div>
-                <p class="card-text">ja hebt hier een rijbewijs voor nodig anders mag je niet op een jet ski</p>
+                <p class="card-text">ja hebt hier een {{$activ->activiteitbenodigheden}} nodig </p>
                 <a href="#" class="btn btn-primary">Meer informatie</a>
             </div>
         </div>
@@ -50,7 +60,7 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">Kosten</h4></div>
-                <p class="card-text">voor deze activiteit komen er kosten voor de gebruiker van 30 euro p.p.</p>
+                <p class="card-text">voor deze activiteit komen er kosten voor de gebruiker van {{$activ->activiteitkosten}} euro p.p.</p>
                 <a href="#" class="btn btn-primary">Meer informatie</a>
             </div>
         </div>
@@ -58,7 +68,7 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">tijden</h4></div>
-                <p class="card-text">het begintijd is 14:00 uur en het eindtijd is 16:00 uur</p>
+                <p class="card-text">het begintijd is {{$activ->activiteitbegintijd}} uur en het eindtijd is {{$activ->activiteiteindtijd}} uur</p>
                 <a href="#" class="btn btn-primary">Meer informatie</a>
             </div>
         </div>
@@ -66,11 +76,11 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
             <div class="card-header"><h4 class="card-title">Omschrijving</h4></div>
-                <p class="card-text">Hier nog eventuele informatie van de activiteit</p>
+                <p class="card-text">{{$activ->activeitomschrijving}}</p>
                 <a href="#" class="btn btn-primary">Meer informatie</a>
             </div>
         </div>
-
+        @endforeach
     </div>
 
 @endsection
