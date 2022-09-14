@@ -6,7 +6,8 @@
         <div class="container">
            <?php
             $id = 1;
-            $activiteiten = DB::table('activiteiten')->get();?>
+            $activiteiten = DB::table('activiteiten')->get();
+            ?>
 
             <div class="row">
                 @foreach($activiteiten as $activ)
