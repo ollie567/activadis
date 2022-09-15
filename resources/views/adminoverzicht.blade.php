@@ -51,7 +51,7 @@
 
                 <div class="col-sm-6 ">
                     <div class="attractions">
-                        <a href="/adminDetail">
+                        <a href="/adminDetail?id=0">
                             <div class="card" style="width: 100%;">
                                 <img src="https://cdn-icons-png.flaticon.com/512/25/25340.png?w=360&h=" class="card-img-top" style="height: 400px;" alt="attraction">
                                 <div class="card-body" style="height: 200px;">

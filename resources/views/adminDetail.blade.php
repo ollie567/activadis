@@ -3,10 +3,10 @@
 
 <div class="container">
     <?php
-    if ($_GET['id'] == null)
+    if ($_GET['id'] == 0)
     {
     ?>
-<form method="">
+<form method="/activiteit/add" method="post">
         @csrf
 
         <div class="form-group">
@@ -61,7 +61,7 @@
                    value="">
         </div>
 
-        <button type="submit" class="btn btn-primary mb-2">Edit activiteit</button>
+        <button type="submit" class="btn btn-primary mb-2">voeg activiteit</button>
 
     </form>
         <?php
@@ -81,12 +81,12 @@
 
                 <div class="form-group">
                     <label for="price">afbeelding link</label>
-                    <input type="text" class="form-control" name="attractionMinLengthWithSupervisor"
+                    <input type="text" class="form-control" name="afbeelding"
                            value="{{$activ->activiteitafbeelding}}">
                 </div>
                 <div class="form-group">
                     <label for="name">Locatie</label>
-                    <input type="text" class="form-control" name="attractionName"
+                    <input type="text" class="form-control" name="locatie"
                            value="{{$activ->activiteitlocatie}}">
                 </div>
                 <div class="form-group">
