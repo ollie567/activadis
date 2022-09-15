@@ -15,6 +15,11 @@
                    value="">
         </div>
         <div class="form-group">
+            <label for="price">Naam</label>
+            <input type="text" class="form-control" name="naam"
+                   value="">
+        </div>
+        <div class="form-group">
             <label for="name">Locatie</label>
             <input type="text" class="form-control" name="locatie"
                    value="">
@@ -84,6 +89,11 @@
                     <label for="price">afbeelding link</label>
                     <input type="text" class="form-control" name="afbeelding"
                            value="{{$activ->activiteitafbeelding}}">
+                </div>
+                <div class="form-group">
+                    <label for="price">Naam</label>
+                    <input type="text" class="form-control" name="naam"
+                           value="{{$activ->activiteitnaam}}">
                 </div>
                 <div class="form-group">
                     <label for="name">Locatie</label>
