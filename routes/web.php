@@ -56,3 +56,5 @@ Route::post('/adminoverzicht', function () {
 Route::get('/detailPagina', function () {
     return view('detailPagina');
 });
+
+Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
