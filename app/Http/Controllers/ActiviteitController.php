@@ -15,7 +15,7 @@ class ActiviteitController extends Controller
         $newbooking->activiteitnaam = $request->;
         $newbooking->activiteitlocatie = $request->locatie;
         $newbooking->activeitomschrijving = $request->;
-        $newbooking->activeiteten = $request->;
+        $newbooking->activeiteten = $request->eten;
         $newbooking->activiteitmindeelnemers = $request->;
         $newbooking->activiteitmaxdeelnemers = $request->;
         $newbooking->activiteitkosten = $request->;

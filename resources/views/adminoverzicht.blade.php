@@ -66,15 +66,7 @@
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm" style="width: 100%; margin-top:20px;">
-                        <a href="/adminToevoegen">
-                            <div class="card-body">
-                                <img class="d-block w-100" src="https://cdn.onlinewebfonts.com/svg/img_28497.png">
-                            </div>
-                        </a>
-                    </div>
-                </div>
+
 
             </div>
 @endsection
