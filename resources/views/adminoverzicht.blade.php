@@ -36,7 +36,7 @@
                                             kosten: €{{$activ->activiteitkosten}}  || Benodigheden: {{$activ->activiteitbenodigheden}} <br>
                                             begintijd: {{$activ->activiteitbegintijd}}  || eindtijd: {{$activ->activiteiteindtijd}} <br>
 
-                                        </p>
+
 
 
                                     </div>
@@ -54,12 +54,23 @@
                         <a href="/adminDetail?id=0">
                             <div class="card" style="width: 100%;">
                                 <img src="https://cdn-icons-png.flaticon.com/512/25/25340.png?w=360&h=" class="card-img-top" style="height: 400px;" alt="attraction">
+
                                 <div class="card-body" style="height: 200px;">
                                     <h1 class="card-title">add new</h1>
 
 
 
                                 </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm" style="width: 100%; margin-top:20px;">
+                        <a href="/adminToevoegen">
+                            <div class="card-body">
+                                <img class="d-block w-100" src="https://cdn.onlinewebfonts.com/svg/img_28497.png">
                             </div>
                         </a>
                     </div>
