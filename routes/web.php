@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActiviteitController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +59,5 @@ Route::get('/detailPagina', function () {
     return view('detailPagina');
 });
 
-Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
+Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
+Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activiteit extends Model
 {
-    protected $table = "activiteiten";
     use HasFactory;
+    protected $table = 'activiteiten';
 }
