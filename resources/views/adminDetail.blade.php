@@ -79,7 +79,7 @@
         ?>
         @foreach($detail as $activ)
 
-            <form method="get">
+            <form action="/activiteit/delete" method="get">
                 @csrf
                 <input type="hidden" value="{{$activ->ID}}" name="id">
                 <div class="form-group">

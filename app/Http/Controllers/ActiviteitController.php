@@ -38,7 +38,8 @@ class ActiviteitController extends Controller
         // Vullen van de contact variabelen
         $newbooking->ID = $request->id;
         // Opslaan in de databasebooking
-        $newbooking->delete();
+//        $newbooking->delete();
+        $newbooking::where('ID', '=', $request->id)->delete();
 
         // Terugsturen met succes bericht
         return redirect('/adminoverzicht')->with('message', 'Uw booking was succesful');

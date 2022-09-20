@@ -24,7 +24,7 @@
                     <div class="col-sm-6 ">
                         <div class="attractions">
 
-                            <a href="/adminDetail?id=<?php echo $id?>">
+                            <a href="/adminDetail?id={{$activ->ID}}">
                                 <div class="card" style="width: 100%;">
                                     <img src="{{$activ->activiteitafbeelding}}" class="card-img-top" style="height: 400px;" alt="attraction">
                                     <div class="card-body" style="height: 200px;">
