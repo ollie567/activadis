@@ -3,12 +3,13 @@
 
 <div class="container">
     <?php
-    if ($_GET['id'] == 0)
+    if ($_GET['id'] == null)
     {
-    ?>
-<form method="/activiteit/add" method="post">
-        @csrf
 
+    ?>
+<form action="/activiteit/add" method="GET">
+        @csrf
+        <input type="hidden" name="id" value="">
         <div class="form-group">
             <label for="price">afbeelding link</label>
             <input type="text" class="form-control" name="afbeelding"
@@ -26,43 +27,43 @@
         </div>
         <div class="form-group">
             <label for="price">inclusief eten </label>
-            <input type="text" class="form-control" name="eten"
-                   value="">
+            <input type="radio" class="form-control" name="eten" value="ja">
+            <input type="radio" class="form-control" name="eten" value="nee">
         </div>
 
         <div class="form-group">
             <label for="price">minimaal aantal deelnemers</label>
-            <input type="text" class="form-control" name="mindeelnemers"
-                   value="">
+            <input type="number" class="form-control" name="mindeelnemers"
+                   value="0">
         </div>
         <div class="form-group">
             <label for="price">max deelnemers</label>
-            <input type="text" class="form-control" name="attractionLoation"
-                   value="">
+            <input type="number" class="form-control" name="maxdeelnemers"
+                   value="10">
         </div>
         <div class="form-group">
             <label for="price">kosten</label>
-            <input type="text" class="form-control" name="attractionWaittime"
+            <input type="text" class="form-control" name="kosten"
                    value="">
         </div>
         <div class="form-group">
             <label for="price">benodigenheden</label>
-            <input type="text" class="form-control" name="attractionMinLength"
+            <input type="text" class="form-control" name="benodigheden"
                    value="">
         </div>
         <div class="form-group">
             <label for="price">begintijd</label>
-            <input type="text" class="form-control" name="attractionMinLengthWithSupervisor"
+            <input type="text" class="form-control" name="btijd"
                    value="">
         </div>
         <div class="form-group">
             <label for="price">eindtijd</label>
-            <input type="text" class="form-control" name="attractionMinLengthWithSupervisor"
+            <input type="text" class="form-control" name="etijd"
                    value="">
         </div>
         <div class="form-group">
             <label for="price">omschrijving</label>
-            <input type="text" class="form-control" name="attractionMinLengthWithSupervisor"
+            <input type="text" class="form-control" name="omschrijving"
                    value="">
         </div>
 
@@ -77,14 +78,10 @@
 
         ?>
         @foreach($detail as $activ)
-            @if($activ->activiteiteten = true)
-                <?php $eten = 'true'?>
-            @else
-                <?php $eten = 'false'?>
-            @endif
-            <form method="">
-                @csrf
 
+            <form action="/activiteit/delete" method="get">
+                @csrf
+                <input type="hidden" value="{{$activ->ID}}" name="id">
                 <div class="form-group">
                     <label for="price">afbeelding link</label>
                     <input type="text" class="form-control" name="afbeelding"
@@ -103,7 +100,8 @@
                 <div class="form-group">
                     <label for="price">inclusief eten </label>
                     <input type="text" class="form-control" name="attractionDescription"
-                              value="<?php echo $eten?> ">
+                           value="{{$activ->activeiteten}}">
+{{--                              value="<?php echo $eten?> ">--}}
                 </div>
 
                 <div class="form-group">
