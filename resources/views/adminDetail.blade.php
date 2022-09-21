@@ -81,7 +81,6 @@
 
             <form action="/activiteit/delete" method="get">
                 @csrf
-                <input type="hidden" value="{{$activ->ID}}" name="id">
                 <div class="form-group">
                     <label for="price">afbeelding link</label>
                     <input type="text" class="form-control" name="afbeelding" required
@@ -139,8 +138,9 @@
                     <input type="text" class="form-control" name="attractionMinLengthWithSupervisor" required
                            value="{{$activ->activeitomschrijving}}">
                 </div>
+                <input type="hidden" value="{{$activ->ID}}" name="id">
 
-                <button type="submit" class="btn btn-primary mb-2">Edit activiteit</button>
+                <button type="submit" class="btn btn-primary mb-2">Delete activiteit</button>
 
             </form>
         @endforeach
