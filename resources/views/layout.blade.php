@@ -89,7 +89,7 @@
                 @auth
                     @if(auth()->user()->is_admin == 1)
                         <li class="nav-item active">
-                            <a class="nav-link" href="/adminoverzicht">adminOverzicht <span
+                            <a class="nav-link" href="/adminoverzicht">Admin-overzicht <span
                                     class="sr-only">(current)</span></a>
                         </li>
                     @else
@@ -118,7 +118,13 @@
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="/overzicht" class="nav-link px-2 text-muted">Overzicht</a></li>
+            @auth
+                @if(auth()->user()->is_admin == 1)
+                    <li class="nav-item"><a href="/adminoverzicht" class="nav-link px-2 text-muted">Admin-overzicht</a></li>
+                @else
+                    <li class="nav-item"><a href="/overzicht" class="nav-link px-2 text-muted">Overzicht</a></li>
+                @endif
+            @endauth
             <li class="nav-item"><a href="/contact" class="nav-link px-2 text-muted">Contact</a></li>
         </ul>
     </footer>
