@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,18 +17,29 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('gebruikers')->insert([
-            'gebruikeremail' => 'admin@gmail.com',
-            'gebruikernaam' => 'admin',
-            'gebruikerwachtwoord' => 'adminww',
-            'is_admin' => true,
-        ]);
-        DB::table('gebruikers')->insert([
-            'gebruikeremail' => 'user@gmail.com',
-            'gebruikernaam' => 'user',
-            'gebruikerwachtwoord' => 'userww',
-            'is_admin' => false,
-        ]);
+        $users = [
+            [
+                'email' => 'admin@gmail.com',
+                'name' => 'admin',
+                'password' => 'adminww',
+                'is_admin' => true,
+            ],
+            [
+                'email' => 'user@gmail.com',
+                'name' => 'user',
+                'password' => 'userww',
+                'is_admin' => null,
+            ]
+        ];
+
+        foreach($users as $user)
+        {
+            User::create([
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'password' => Hash::make($user['password'])
+            ]);
+        }
         DB::table('activiteiten')->insert([
             'activiteitnaam' => 'jetskiëen',
             'activiteitlocatie' => 'stroombroek in braamt',
