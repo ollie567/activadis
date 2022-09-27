@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\ActiviteitController;
+
+
+use App\Http\Controllers\SessionController;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -17,47 +22,56 @@ use App\Http\Controllers\ActiviteitController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->middleware('auth');
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 });
 
-Route::get('/adminlogin', function () {
-    return view('adminlogin');
-});
+Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+Route::post('/storeLogin', [SessionController::class, 'store']);
 
 Route::get('/overzicht', function () {
     return view('overzicht');
-});
-
-Route::get('/adminoverzicht', function () {
-    return view('adminoverzicht');
-});
+})->middleware('auth');
 
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/adminDetail', function () {
-    return view('adminDetail');
-});
-
-Route::get('/adminToevoegen', function () {
-    return view('adminToevoegen');
-});
+})->middleware('auth');
 
 Route::post('/overzicht', function () {
     return view('overzicht');
-});
-
-Route::post('/adminoverzicht', function () {
-    return view('adminoverzicht');
-});
+})->middleware('auth');
 
 Route::get('/detailPagina', function () {
     return view('detailPagina');
-});
+})->middleware('auth');
+
 
 Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
 Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);
+
+Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
+
+Auth::routes();
+
+Route::group(['middleware' => ['admin']], function () {
+    Route::post('/adminoverzicht', function () {
+        return view('adminoverzicht');
+    });
+
+    Route::get('/adminoverzicht', function () {
+        return view('adminoverzicht');
+    });
+
+    Route::get('/adminToevoegen', function () {
+        return view('adminToevoegen');
+    });
+
+    Route::get('/adminDetail', function () {
+        return view('adminDetail');
+    });
+});
+
+
