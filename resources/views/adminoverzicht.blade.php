@@ -8,9 +8,11 @@
             $id = 1;
             $activiteiten = DB::table('activiteiten')->get();
             ?>
+            <div class="text-right " style="width: 100%">
                 <a href="/adminDetail?id=">
-                    <button>Toevoegen</button>
+                    <button class="btn btn-warning">Toevoegen</button>
                 </a>
+            </div>
 
             <div class="row">
 
