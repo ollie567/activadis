@@ -44,7 +44,12 @@
                                 <td>{{$activ->activeitomschrijving}}</td>
                                 <td><a href="/detailPagina?id=<?php echo $id?>"><button class="btn btn-primary" type="submit">info</button></a></td>
                                 <td><a href="/adminDetail?id=<?php echo $id?>"><button class="btn btn-secondary" type="submit">aanpassen</button></a></td>
-                                <td><button type="button" class="btn btn-danger">verwijder</button></td>
+                                <td>
+                                    <form action="/activiteit/delete">
+                                        <input type="hidden" value="{{$activ->ID}}" name="id">
+                                        <button type="submit" class="btn btn-danger">verwijder</button>
+                                    </form>
+                                </td>
 
                             </tr>
                         </tbody>
