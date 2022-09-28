@@ -8,6 +8,9 @@
             $id = 1;
             $activiteiten = DB::table('activiteiten')->get();
             ?>
+                <a href="/adminDetail?id=">
+                    <button>Toevoegen</button>
+                </a>
 
             <div class="row">
 
@@ -24,7 +27,7 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    
+
 
 
                 @foreach($activiteiten as $activ)
@@ -40,7 +43,7 @@
                                 <td><a href="/detailPagina?id=<?php echo $id?>"><button class="btn btn-primary" type="submit">info</button></a></td>
                                 <td><a href="/adminDetail?id=<?php echo $id?>"><button class="btn btn-secondary" type="submit">aanpassen</button></a></td>
                                 <td><button type="button" class="btn btn-danger">verwijder</button></td>
-                                
+
                             </tr>
                         </tbody>
 
@@ -55,7 +58,7 @@
                 <button class="btn btn-primary" type="submit">volgende</button>
             </div>
 
-                            {{-- 
+                            {{--
                                             Locatie: {{$activ->activiteitlocatie}}  ||  incl eten: {{$eten}} <br>
                                             min deelnemers: {{$activ->activiteitmindeelnemers}}  || max deelnemers: {{$activ->activiteitmaxdeelnemers}} <br>
                                             kosten: €{{$activ->activiteitkosten}}  || Benodigheden: {{$activ->activiteitbenodigheden}} <br>
