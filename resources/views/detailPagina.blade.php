@@ -23,7 +23,11 @@
         </div>
     </div>
     <div style="width: 100%">
-        <button style="margin-left: 500px; width: 500px">Aanmelden</button>
+
+        <div class="text-center" style="width: 100%; margin-top: 30px">
+            <button class="btn btn-primary" type="submit" style="width: 150px; height: 50px;">aanmelden</button>
+        </div>
+
     </div>
     <div class="mt-3 d-flex flex-row flex-wrap justify-content-center">
         <div class="card m-3" style="width: 18rem;">
