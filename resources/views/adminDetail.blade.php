@@ -79,7 +79,7 @@
         ?>
         @foreach($detail as $activ)
 
-            <form action="/activiteit/delete" method="get">
+            <form action="/activiteit/edit" method="get">
                 @csrf
                 <div class="form-group">
                     <label for="price">afbeelding link</label>
