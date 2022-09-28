@@ -10,56 +10,62 @@
             ?>
 
             <div class="row">
-
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">afbeelding</th>
-                            <th scope="col">title</th>
-                            <th scope="col">locatie</th>
-                            <th scope="col">omschrijving</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    
-
-
                 @foreach($activiteiten as $activ)
                     <?php
                     $activiteiten = DB::table('activiteiten')->where('ID', $id)->get();
                     ?>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <td><img src="{{$activ->activiteitafbeelding}}" class="card-img-top" style="height: 120px; width: 200px;" alt="attraction"></td>
-                                <td>{{$activ->activiteitnaam}}</td>
-                                <td>{{$activ->activiteitlocatie}}</td>
-                                <td>{{$activ->activeitomschrijving}}</td>
-                                <td><a href="/detailPagina?id=<?php echo $id?>"><button class="btn btn-primary" type="submit">info</button></a></td>
-                                <td><a href="/adminDetail?id=<?php echo $id?>"><button class="btn btn-secondary" type="submit">aanpassen</button></a></td>
-                                <td><button type="button" class="btn btn-danger">verwijder</button></td>
-                                
-                            </tr>
-                        </tbody>
 
+
+                    @if($activ->activiteiteten = true)
+                        <?php $eten = 'ja'?>
+                    @else
+                        <?php $eten = 'nee'?>
+                    @endif
+                    <div class="col-sm-6 ">
+                        <div class="attractions">
+
+                            <a href="/adminDetail?id={{$activ->ID}}">
+                                <div class="card" style="width: 100%;">
+                                    <img src="{{$activ->activiteitafbeelding}}" class="card-img-top" style="height: 400px;" alt="attraction">
+                                    <div class="card-body" style="height: 200px;">
+                                        <h5 class="card-title">{{$activ->activiteitnaam}}</h5>
+                                        <p class="card-text">
+                                            omschrijving: {{$activ->activeitomschrijving}}
+                                            Locatie: {{$activ->activiteitlocatie}}  ||  incl eten: {{$eten}} <br>
+                                            min deelnemers: {{$activ->activiteitmindeelnemers}}  || max deelnemers: {{$activ->activiteitmaxdeelnemers}} <br>
+                                            kosten: €{{$activ->activiteitkosten}}  || Benodigheden: {{$activ->activiteitbenodigheden}} <br>
+                                            begintijd: {{$activ->activiteitbegintijd}}  || eindtijd: {{$activ->activiteiteindtijd}} <br>
+
+
+
+
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
 
                     <?php $id++ ?>
                 @endforeach
 
-            </table>
+                <div class="col-sm-6 ">
+                    <div class="attractions">
+                        <a href="/adminDetail?id=">
+                            <div class="card" style="width: 100%;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/25/25340.png?w=360&h=" class="card-img-top" style="height: 400px;" alt="attraction">
 
-            <div class="d-flex justify-content-between" style="width: 100%">
-                <button class="btn btn-primary" type="submit">vorige</button>
-                <button class="btn btn-primary" type="submit">volgende</button>
-            </div>
+                                <div class="card-body" style="height: 200px;">
+                                    <h1 class="card-title">add new</h1>
 
-                            {{-- 
-                                            Locatie: {{$activ->activiteitlocatie}}  ||  incl eten: {{$eten}} <br>
-                                            min deelnemers: {{$activ->activiteitmindeelnemers}}  || max deelnemers: {{$activ->activiteitmaxdeelnemers}} <br>
-                                            kosten: €{{$activ->activiteitkosten}}  || Benodigheden: {{$activ->activiteitbenodigheden}} <br>
-                                            begintijd: {{$activ->activiteitbegintijd}}  || eindtijd: {{$activ->activiteiteindtijd}} <br> --}}
+
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
 
 
             </div>
