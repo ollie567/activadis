@@ -89,8 +89,10 @@
                 @auth
                     @if(auth()->user()->is_admin == 1)
                         <li class="nav-item active">
-                            <a class="nav-link" href="/adminoverzicht">Admin-overzicht <span
-                                    class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/activityoverzicht">Activiteiten-overzicht <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/useroverzicht">Gebruikers-overzicht <span class="sr-only">(current)</span></a>
                         </li>
                     @else
                         <li class="nav-item active">
@@ -120,7 +122,8 @@
             <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
             @auth
                 @if(auth()->user()->is_admin == 1)
-                    <li class="nav-item"><a href="/adminoverzicht" class="nav-link px-2 text-muted">Admin-overzicht</a></li>
+                    <li class="nav-item"><a href="/activityoverzicht" class="nav-link px-2 text-muted">Activiteiten-overzicht</a></li>
+                    <li class="nav-item"><a href="/useroverzicht" class="nav-link px-2 text-muted">Gebruikers-overzicht</a></li>
                 @else
                     <li class="nav-item"><a href="/overzicht" class="nav-link px-2 text-muted">Overzicht</a></li>
                 @endif

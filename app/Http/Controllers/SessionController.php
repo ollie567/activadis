@@ -24,7 +24,7 @@ class SessionController extends Controller
         }
 
         // Kloppen de credentials, stuur het dat terug naar de homepage met een succes message
-        return redirect('/')->with('success', 'Welkom terug');
+        return redirect('/')->with('success', 'Welkom terug!');
     }
 
     public function destroy()
@@ -33,6 +33,6 @@ class SessionController extends Controller
         auth()->logout();
 
         // Terugsturen met succes bericht
-        return redirect('/login')->with('success', 'Goodbye!');
+        return redirect('/login')->with('success', 'Tot ziens!');
     }
 }

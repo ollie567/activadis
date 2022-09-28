@@ -57,12 +57,20 @@ Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::clas
 Auth::routes();
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::post('/adminoverzicht', function () {
-        return view('adminoverzicht');
+    Route::post('/activityoverzicht', function () {
+        return view('activityoverzicht');
     });
 
-    Route::get('/adminoverzicht', function () {
-        return view('adminoverzicht');
+    Route::get('/activityoverzicht', function () {
+        return view('activityoverzicht');
+    });
+
+    Route::post('/useroverzicht', function () {
+        return view('useroverzicht');
+    });
+
+    Route::get('/useroverzicht', function () {
+        return view('useroverzicht');
     });
 
     Route::get('/adminToevoegen', function () {
