@@ -38,7 +38,7 @@ Route::get('/overzicht', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-})->middleware('auth');
+})->middleware('guest');
 
 Route::post('/overzicht', function () {
     return view('overzicht');
