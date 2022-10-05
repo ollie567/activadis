@@ -79,68 +79,79 @@
         ?>
         @foreach($detail as $activ)
 
-            <form action="/activiteit/edit" method="get">
+            <form action="/activiteit/edit" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="price">afbeelding link</label>
+{{--                    <input type="text" class="form-control" name="activiteitafbeelding" required--}}
                     <input type="text" class="form-control" name="afbeelding" required
                            value="{{$activ->activiteitafbeelding}}">
                 </div>
                 <div class="form-group">
                     <label for="price">Naam</label>
+{{--                    <input type="text" class="form-control" name="activiteitnaam" required--}}
                     <input type="text" class="form-control" name="naam" required
                            value="{{$activ->activiteitnaam}}">
                 </div>
                 <div class="form-group">
                     <label for="name">Locatie</label>
+{{--                    <input type="text" class="form-control" name="activiteitlocatie" required--}}
                     <input type="text" class="form-control" name="locatie" required
                            value="{{$activ->activiteitlocatie}}">
                 </div>
                 <div class="form-group">
                     <label for="price">inclusief eten </label>
-                    <input type="text" class="form-control" name="attractionDescription" required
+{{--                    <input type="text" class="form-control" name="activeiteten" required--}}
+                    <input type="text" class="form-control" name="eten" required
                            value="{{$activ->activeiteten}}">
-{{--                              value="<?php echo $eten?> ">--}}
                 </div>
 
                 <div class="form-group">
                     <label for="price">minimaal aantal deelnemers</label>
-                    <input type="text" class="form-control" name="attractionImage" required
+{{--                    <input type="number" class="form-control" name="activiteitmindeelnemers" required--}}
+                    <input type="number" class="form-control" name="mindeelnemers" required
                            value="{{$activ->activiteitmindeelnemers}}">
                 </div>
                 <div class="form-group">
                     <label for="price">max deelnemers</label>
-                    <input type="text" class="form-control" name="attractionLoation" required
+{{--                    <input type="number" class="form-control" name="activiteitmaxdeelnemers" required--}}
+                    <input type="number" class="form-control" name="maxdeelnemers" required
                            value="{{$activ->activiteitmaxdeelnemers}}">
                 </div>
                 <div class="form-group">
                     <label for="price">kosten</label>
-                    <input type="text" class="form-control" name="attractionWaittime" required
+{{--                    <input type="number" class="form-control" name="activiteitkosten" required--}}
+                    <input type="number" class="form-control" name="kosten" required
                            value="{{$activ->activiteitkosten}}">
                 </div>
                 <div class="form-group">
                     <label for="price">benodigenheden</label>
-                    <input type="text" class="form-control" name="attractionMinLength"
+{{--                    <input type="text" class="form-control" name="activiteitbenodigheden"--}}
+                    <input type="text" class="form-control" name="benodigheden"
                            value="{{$activ->activiteitbenodigheden}}">
                 </div>
                 <div class="form-group">
                     <label for="price">begintijd</label>
-                    <input type="text" class="form-control" name="attractionMinLengthWithSupervisor" required
+                    <input type="text" class="form-control" name="activiteitbegintijd" required
+{{--                    <input type="text" class="form-control" name="btijd" required--}}
                            value="{{$activ->activiteitbegintijd}}">
                 </div>
                 <div class="form-group">
                     <label for="price">eindtijd</label>
-                    <input type="text" class="form-control" name="attractionMinLengthWithSupervisor" required
+{{--                    <input type="text" class="form-control" name="activiteiteindtijd" required--}}
+                    <input type="text" class="form-control" name="etijd" required
                            value="{{$activ->activiteiteindtijd}}">
                 </div>
                 <div class="form-group">
                     <label for="price">omschrijving</label>
-                    <input type="text" class="form-control" name="attractionMinLengthWithSupervisor" required
+{{--                    <input type="text" class="form-control" name="activeitomschrijving" required--}}
+                    <input type="text" class="form-control" name="omschrijving" required
                            value="{{$activ->activeitomschrijving}}">
                 </div>
+{{--                <input type="hidden" value="{{$activ->ID}}" name="ID">--}}
                 <input type="hidden" value="{{$activ->ID}}" name="id">
 
-                <button type="submit" class="btn btn-primary mb-2">Delete activiteit</button>
+                <button type="submit" href="/activiteit/edit" class="btn btn-primary mb-2">Edit activiteit</button>
 
             </form>
         @endforeach

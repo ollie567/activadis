@@ -55,7 +55,7 @@
                         </tbody>
 
 
-                    <?php $id++ ?>
+
                 @endforeach
 
             </table>

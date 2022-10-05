@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Activiteit;
 
@@ -47,54 +46,82 @@ class ActiviteitController extends Controller
 
     public function editActiviteit(Request $request)
     {
-        $request->validate([
-            'activiteitnaam'=>'required',
-            'activiteitlocatie'=>'required',
-            'activeitomschrijving'=>'required',
-            'activeiteten'=>'required',
-            'activiteitmindeelnemers'=>'required',
-            'activiteitmaxdeelnemers'=>'required',
-            'activiteitkosten'=>'required',
-            'activiteitbenodigheden'=>'required',
-            'activiteitbegintijd'=>'required',
-            'activiteiteindtijd'=>'required',
-            'activiteitafbeelding'=>'required',
-        ]);
-        // Aanmaken nieuw contact inzending
-        $newbooking = new Activiteit();
+//        $table = new Activiteit();
+//        $functie = $table::where(ID, 7);
+//        $functie->activiteitnaam='paintball';
+//        $functie->save();
 
-        // Vullen van de contact variabelen
-//        $newbooking->ID = $request->id;
-        $newbooking->activiteitnaam = $request->naam;
-        $newbooking->activiteitlocatie = $request->locatie;
-        $newbooking->activeitomschrijving = $request->omschrijving;
-        $newbooking->activeiteten = $request->eten;
-        $newbooking->activiteitmindeelnemers = $request->mindeelnemers;
-        $newbooking->activiteitmaxdeelnemers = $request->maxdeelnemers;
-        $newbooking->activiteitkosten = $request->kosten;
-        $newbooking->activiteitbenodigheden = $request->benodigheden;
-        $newbooking->activiteitbegintijd = $request->btijd;
-        $newbooking->activiteiteindtijd = $request->etijd;
-        $newbooking->activiteitafbeelding = $request->afbeelding;
-//         Opslaan in de databasebooking
-        $activiteit = Activiteit::find($request->id)->update($newbooking);
-        $activiteit->save();
-//        $newbooking->update();
-
-//        DB::table('activiteiten')->where('ID', '=', $request->id)->update(
-//            [
-//            'activiteitnaam' => $request->naam,
-//            'activiteitlocatie' => $request->locatie,
-//            'activeitomschrijving' => $request->omschrijving,
-//            'activeiteten' => $request->eten,
-//            'activiteitmindeelnemers' => $request->mindeelnemers,
-//            'activiteitmaxdeelnemer' => $request->maxdeelnemers,
-//            'activiteitkosten' => $request->kosten,
-//            'activiteitbenodigheden' => $request->benodigheden,
-//            'activiteitbegintijd' => $request->btijd,
-//            'activiteiteindtijd' => $request->etijd,
-//            'activiteitafbeelding' => $request->afbeelding,
+//        $request->validate([
+//            'activiteitnaam'=>'required',
+//            'activiteitlocatie'=>'required',
+//            'activeitomschrijving'=>'required',
+//            'activeiteten'=>'required',
+//            'activiteitmindeelnemers'=>'required',
+//            'activiteitmaxdeelnemers'=>'required',
+//            'activiteitkosten'=>'required',
+//            'activiteitbegintijd'=>'required',
+//            'activiteiteindtijd'=>'required',
+//            'activiteitafbeelding'=>'required',
 //        ]);
+//        DB::table('activiteiten')->where('ID','=',$id)->update([]);
+//        $update=table::find(ID);
+        $activiteitid = $request->id;
+        $naam = $request->naam;
+        $locatie = $request->locatie;
+        $omschrijving = $request->omschrijving;
+        $eten = $request->eten;
+        $mindeelnemers = $request->mindeelnemers;
+        $maxdeelnemers = $request->maxdeelnemers;
+        $kosten = $request->kosten;
+        $benodigheden = $request->benodigheden;
+        $btijd = $request->btijd;
+        $etijd = $request->etijd;
+        $afbeelding = $request->afbeelding;
+//        DB::table('update activiteiten set activiteitnaam =' . $naam . ',activiteitlocatie ='. $locatie . ',activeitomschrijving =' . $omschrijving .
+//            ',activeiteten =' . $eten . ',activiteitmindeelnemers ='. $mindeelnemers .',activiteitmaxdeelnemers ='. $maxdeelnemers .',activiteitkosten ='. $kosten .
+//            ',activiteitbenodigheden =' . $benodigheden . ',activiteitbegintijd ='. $btijd . ',activiteiteindtijd ='.$etijd. ',activiteitafbeelding ='. $afbeelding .
+//            ',where ID =' . $activiteitid );
+
+
+
+
+        // Aanmaken nieuw contact inzending
+        $id = 7;
+        $table = new Activiteit();
+        $newbooking = $table::query()->find(7);
+        // Vullen van de contact variabelen
+//        $newbooking->ID= $activiteitid;
+        $newbooking->activiteitnaam = $naam;
+        $newbooking->activiteitlocatie = $locatie;
+        $newbooking->activeitomschrijving = $omschrijving;
+        $newbooking->activeiteten = $eten;
+        $newbooking->activiteitmindeelnemers = $mindeelnemers;
+        $newbooking->activiteitmaxdeelnemers = $maxdeelnemers;
+        $newbooking->activiteitkosten = $kosten;
+        $newbooking->activiteitbenodigheden = $benodigheden;
+        $newbooking->activiteitbegintijd = $btijd;
+        $newbooking->activiteiteindtijd = $etijd;
+        $newbooking->activiteitafbeelding = $afbeelding;
+        $newbooking->save();
+//         Opslaan in de databasebooking
+//        Activiteit::whereId(7)->update($newbooking);
+
+//        DB::table('activiteiten')->where('ID', $id)->update(
+//        Activiteit::where('ID', $id)->update(
+//            [
+//            'activiteitnaam' => $naam,
+//            'activiteitlocatie' => $locatie,
+//            'activeitomschrijving' => $omschrijving,
+//            'activeiteten' => $eten,
+//            'activiteitmindeelnemers' => $mindeelnemers,
+//            'activiteitmaxdeelnemer' => $maxdeelnemers,
+//            'activiteitkosten' => $kosten,
+//            'activiteitbenodigheden' => $benodigheden,
+//            'activiteitbegintijd' => $btijd,
+//            'activiteiteindtijd' => $etijd,
+//            'activiteitafbeelding' => $afbeelding,
+//            ]
+//        );
 
         return redirect('/activityoverzicht')->with('message', 'Uw booking was succesful');
     }

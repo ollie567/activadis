@@ -9,4 +9,10 @@ class Activiteit extends Model
 {
     use HasFactory;
     protected $table = 'activiteiten';
+
+    protected $fillable = ['ID','activiteitnaam','activiteitlocatie',
+        'activeitomschrijving','activeiteten','activiteitmindeelnemers','activiteitmaxdeelnemers',
+        'activiteitkosten','activiteitbegintijd','activiteiteindtijd','activiteitafbeelding'];
+
+
 }
