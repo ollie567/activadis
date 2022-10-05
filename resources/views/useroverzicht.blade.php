@@ -9,7 +9,7 @@
             $users = DB::table('users')->get();
             ?>
             <div class="text-right " style="width: 100%">
-                <a href="/adminDetail?id=">
+                <a>
                     <button class="btn btn-warning">Toevoegen</button>
                 </a>
             </div>
