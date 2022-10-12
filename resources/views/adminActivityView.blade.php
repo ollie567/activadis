@@ -9,7 +9,7 @@
             $activiteiten = DB::table('activiteiten')->get();
             ?>
             <div class="text-right " style="width: 100%">
-                <a href="/adminDetail?id=">
+                <a href="/adminActivityCreate?id=">
                     <button class="btn btn-warning">Toevoegen</button>
                 </a>
             </div>
@@ -42,8 +42,8 @@
                                 <td>{{$activ->activiteitnaam}}</td>
                                 <td>{{$activ->activiteitlocatie}}</td>
                                 <td>{{$activ->activeitomschrijving}}</td>
-                                <td><a href="/detailPagina?id=<?php echo $activ->ID?>"><button class="btn btn-primary" type="submit">info</button></a></td>
-                                <td><a href="/adminDetail?id=<?php echo $activ->ID?>"><button class="btn btn-secondary" type="submit">aanpassen</button></a></td>
+                                <td><a href="/userActivityDetail?id={{$activ->ID}}"><button class="btn btn-primary" type="submit">info</button></a></td>
+                                <td><a href="/adminActivityUpdate?id={{$activ->ID}}"><button class="btn btn-secondary" type="submit">aanpassen</button></a></td>
                                 <td>
                                     <form action="/activiteit/delete">
                                         <input type="hidden" value="{{$activ->ID}}" name="id">

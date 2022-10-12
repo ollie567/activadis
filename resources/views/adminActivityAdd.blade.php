@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <div class="container">
-  
+
     <form action="/testpage.blade.php">
     <div class="form-group">
                 <label for="name">activiteitnaam</label>
@@ -30,7 +30,7 @@
             <div class="form-group">
                 <label for="price">benodigdheden</label>
                 <input type="text" class="form-control" name="benodigdheden">
-            </div> 
+            </div>
             <div class="form-group">
                 <label for="price">omschrijving</label>
                 <input type="text" class="form-control" name="omschrijving">
@@ -50,7 +50,7 @@
 
             <button type="submit" class="btn btn-primary mb-2">Maak evenement aan</button>
 
-    </form> 
+    </form>
 
     </div>
 @endsection

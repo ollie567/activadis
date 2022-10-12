@@ -25,7 +25,7 @@
                     <div class="attractions">
 
 
-                        <a href="/detailPagina?id=<?php echo $id?>">
+                        <a href="/userActivityDetail?id=<?php echo $id?>">
 
                             <div class="card" style="width: 100%;">
                                 <img src="{{$activ->activiteitafbeelding}}" class="card-img-top" style="height: 400px;" alt="attraction">

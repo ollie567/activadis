@@ -74,45 +74,43 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                @if(\Illuminate\Support\Facades\Auth::check() === false)
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
-                    </li>
-                @else
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/logout">Uitloggen <span class="sr-only">(current)</span></a>
-                    </li>
-                @endif
+
                 @auth
                     @if(auth()->user()->is_admin == 1)
                         <li class="nav-item active">
-                            <a class="nav-link" href="/activityoverzicht">Activiteiten-overzicht <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/adminActivityView">Activiteiten-overzicht <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/useroverzicht">Gebruikers-overzicht <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/adminUserView">Gebruikers-overzicht <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/overzicht">Overzicht <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/activity">Activiteiten<span class="sr-only">(current)</span></a>
                         </li>
                     @else
                         <li class="nav-item active">
-                            <a class="nav-link" href="/overzicht">Overzicht <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/activity">Activiteiten<span class="sr-only">(current)</span></a>
                         </li>
                     @endif
                 @endauth
                 <li class="nav-item active">
                     <a class="nav-link" href="/contact">Contact <span class="sr-only">(current)</span></a>
                 </li>
-                @if(\Illuminate\Support\Facades\Auth::check() === true)
-                    <li class="nav-item active d-flex align-items-center m-lg-2">
-                        <a href="/" class="btn btn-secondary">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-                @endif
+                    @if(\Illuminate\Support\Facades\Auth::check() === false)
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+                        </li>
+                    @else
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/logout">Uitloggen <span class="sr-only">(current)</span></a>
+                        </li>
+                    @endif
+{{--                @if(\Illuminate\Support\Facades\Auth::check() === true)--}}
+{{--                    <li class="nav-item active d-flex align-items-center m-lg-2">--}}
+{{--                        <a href="/" class="btn btn-secondary">--}}
+{{--                            <i class="fa-solid fa-user"></i>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                @endif--}}
             </ul>
         </form>
     </div>
@@ -122,14 +120,13 @@
 <div class="container bottom">
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
             @auth
                 @if(auth()->user()->is_admin == 1)
-                    <li class="nav-item"><a href="/activityoverzicht" class="nav-link px-2 text-muted">Activiteiten-overzicht</a></li>
-                    <li class="nav-item"><a href="/useroverzicht" class="nav-link px-2 text-muted">Gebruikers-overzicht</a></li>
-                    <li class="nav-item"><a href="/overzicht" class="nav-link px-2 text-muted">Overzicht</a></li>
+                    <li class="nav-item"><a href="/adminActivityView" class="nav-link px-2 text-muted">Activiteiten-overzicht</a></li>
+                    <li class="nav-item"><a href="/adminUserView" class="nav-link px-2 text-muted">Gebruikers-overzicht</a></li>
+                    <li class="nav-item"><a href="/activity" class="nav-link px-2 text-muted">Activiteiten</a></li>
                 @else
-                    <li class="nav-item"><a href="/overzicht" class="nav-link px-2 text-muted">Overzicht</a></li>
+                    <li class="nav-item"><a href="/activity" class="nav-link px-2 text-muted">Activiteiten</a></li>
                 @endif
             @endauth
             <li class="nav-item"><a href="/contact" class="nav-link px-2 text-muted">Contact</a></li>

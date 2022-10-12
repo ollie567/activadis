@@ -13,7 +13,7 @@ class ActiviteitController extends Controller
         // Aanmaken nieuw contact inzending
         $newbooking = new Activiteit();
         // Vullen van de contact variabelen
-        $newbooking->activiteitid = $request->ID;
+        $newbooking->ID = $request->ID;
         $newbooking->activiteitnaam = $request->naam;
         $newbooking->activiteitlocatie = $request->locatie;
         $newbooking->activeitomschrijving = $request->omschrijving;
@@ -29,7 +29,7 @@ class ActiviteitController extends Controller
         $newbooking->save();
 
         // Terugsturen met succes bericht
-        return redirect('/activityoverzicht')->with('message', 'Uw booking was succesful');
+        return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
     }
 
     public function deleteActiviteit(Request $request)
@@ -43,7 +43,7 @@ class ActiviteitController extends Controller
         $newbooking::where('ID', '=', $request->id)->delete();
 
         // Terugsturen met succes bericht
-        return redirect('/activityoverzicht')->with('message', 'Uw booking was succesful');
+        return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
     }
 }
 

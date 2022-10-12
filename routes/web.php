@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('activity');
 })->middleware('auth');
 
 Route::get('/login', function () {
@@ -32,20 +32,20 @@ Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 Route::post('/storeLogin', [SessionController::class, 'store']);
 
-Route::get('/overzicht', function () {
-    return view('overzicht');
+Route::get('/activity', function () {
+    return view('activity');
 })->middleware('auth');
 
 Route::get('/contact', function () {
     return view('contact');
-})->middleware('guest');
+});
 
-Route::post('/overzicht', function () {
-    return view('overzicht');
+Route::post('/activity', function () {
+    return view('activity');
 })->middleware('auth');
 
-Route::get('/detailPagina', function () {
-    return view('detailPagina');
+Route::get('/userActivityDetail', function () {
+    return view('userActivityDetail');
 })->middleware('auth');
 
 
@@ -58,28 +58,32 @@ Route::get('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
 Auth::routes();
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::post('/activityoverzicht', function () {
-        return view('activityoverzicht');
+    Route::post('/adminActivityView', function () {
+        return view('adminActivityView');
     });
 
-    Route::get('/activityoverzicht', function () {
-        return view('activityoverzicht');
+    Route::get('/adminActivityView', function () {
+        return view('adminActivityView');
     });
 
-    Route::post('/useroverzicht', function () {
-        return view('useroverzicht');
+    Route::post('/adminUserView', function () {
+        return view('adminUserView');
     });
 
-    Route::get('/useroverzicht', function () {
-        return view('useroverzicht');
+    Route::get('/adminUserView', function () {
+        return view('adminUserView');
     });
 
     Route::get('/adminToevoegen', function () {
         return view('adminToevoegen');
     });
 
-    Route::get('/adminDetail', function () {
-        return view('adminDetail');
+    Route::get('/adminActivityCreate', function () {
+        return view('adminActivityCreate');
+    });
+
+    Route::get('/adminActivityUpdate', function () {
+        return view('adminActivityUpdate');
     });
 });
 
