@@ -34,7 +34,7 @@
                                 <td>{{$activ->activiteitnaam}}</td>
                                 <td>{{$activ->activiteitlocatie}}</td>
                                 <td>{{$activ->activeitomschrijving}}</td>
-                                <td><a href="/detailPagina?id=<?php echo $activ->ID?>"><button class="btn btn-primary" type="submit">info</button></a></td>
+                                <td><a href="/userActivityDetail?id=<?php echo $activ->ID?>"><button class="btn btn-primary" type="submit">info</button></a></td>
 
                             </tr>
                         </tbody>
