@@ -53,7 +53,12 @@
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
                 <div class="card-header"><h4 class="card-title">Speciale benodigheden</h4></div>
-                <p class="card-text">ja hebt hier een {{$activ->activiteitbenodigheden}} nodig </p>
+                @if($activ->activiteitbenodigheden == null)
+                    <p class="card-text"> Je hebt niks nodig</p>
+                    @else
+                    <p class="card-text">Je hebt hier een {{$activ->activiteitbenodigheden}} nodig </p>
+
+                @endif
             </div>
         </div>
 

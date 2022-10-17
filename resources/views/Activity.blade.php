@@ -18,6 +18,7 @@
                             <th scope="col">title</th>
                             <th scope="col">locatie</th>
                             <th scope="col">omschrijving</th>
+                            <th scope="col">aantal deelnemers</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -34,12 +35,12 @@
                                 <td>{{$activ->activiteitnaam}}</td>
                                 <td>{{$activ->activiteitlocatie}}</td>
                                 <td>{{$activ->activeitomschrijving}}</td>
-                                <td><a href="/userActivityDetail?id=<?php echo $activ->ID?>"><button class="btn btn-primary" type="submit">info</button></a></td>
+                                <td>5 vd 15</td>
+                                <td><a href="/userActivityDetail?id={{$activ->ID}}"><button class="btn btn-primary" type="submit">info</button></a></td>
 
                             </tr>
                         </tbody>
 
-                    <?php $id++ ?>
                 @endforeach
 
             </table>
