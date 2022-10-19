@@ -24,4 +24,18 @@ class UserController extends Controller
         return redirect('/adminUserView')->with('message', 'gebruiker aangemaakt');
     }
 
+    public function deleteUser(Request $request)
+    {
+
+        $deleteUser = new User();
+
+        $deleteUser->id = $request->id;
+
+        $deleteUser::where('id', '=', $request->id)->delete();
+
+        // Terugsturen met succes bericht
+        return redirect('/adminUserView')->with('message', '');
+    }
+
+
 }

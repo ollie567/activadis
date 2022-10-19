@@ -54,6 +54,7 @@ Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit
 Route::post('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
 
 Route::get('/addUser/add', [UserController::class, 'addUser']);
+Route::get('/user/delete', [UserController::class, 'deleteUser']);
 
 //Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
 
