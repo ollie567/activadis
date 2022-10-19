@@ -7,9 +7,10 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    //voegt een user toe
     public function addUser(Request $request)
     {
-        // Aanmaken nieuw contact inzending
+        // aanroepen van de user model
         $addUser = new User();
         // Vullen van de contact variabelen
 
@@ -26,15 +27,13 @@ class UserController extends Controller
 
     public function deleteUser(Request $request)
     {
-
+        //aanroepen van de user model
         $deleteUser = new User();
-
-        $deleteUser->id = $request->id;
-
+        //verwijdert de user
         $deleteUser::where('id', '=', $request->id)->delete();
 
         // Terugsturen met succes bericht
-        return redirect('/adminUserView')->with('message', '');
+        return redirect('/adminUserView')->with('message', 'gebruiker verwijdert');
     }
 
 
