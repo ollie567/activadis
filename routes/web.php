@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ActiviteitController;
+
+use App\Http\Controllers\ActivityRegistrationController;
+
 use App\Http\Controllers\UserController;
+
 
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// routes die bereikbaar zijn wanneer jij als user ingelogd bent
 Route::get('/', function () {
     return view('activity');
 })->middleware('auth');
@@ -48,9 +52,13 @@ Route::get('/userActivityDetail', function () {
     return view('userActivityDetail');
 })->middleware('auth');
 
-
+//routes die functies uit controllers aanroepen
 Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
 Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);
+
+Route::get('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
+Route::post('/signUpForActivity', [ActivityRegistrationController::class, 'store']);
+
 Route::post('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
 
 Route::get('/addUser/add', [UserController::class, 'addUser']);
@@ -58,8 +66,10 @@ Route::get('/user/delete', [UserController::class, 'deleteUser']);
 
 //Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
 
+
 Auth::routes();
 
+//routes die bereikbaar zijn voor de admin
 Route::group(['middleware' => ['admin']], function () {
     Route::post('/adminActivityView', function () {
         return view('adminActivityView');
