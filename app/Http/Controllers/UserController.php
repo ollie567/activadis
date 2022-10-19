@@ -14,9 +14,9 @@ class UserController extends Controller
         // aanroepen van de user model
         $addUser = new User();
         // Vullen van de contact variabelen
-
         $addUser->name = $request->name;
         $addUser->email = $request->email;
+        //hashed het wachtwoord
         $addUser->password = Hash::make($request->password);
         $addUser->is_admin = $request->is_admin;
         // Opslaan in de databasebooking
