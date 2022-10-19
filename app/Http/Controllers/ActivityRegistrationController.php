@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ActivityRegistrationController extends Controller
 {
+    //functie om de database te vullen voor een inschrijving
     public function store(){
 
         //vullen van de registratie variabele
