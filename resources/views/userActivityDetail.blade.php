@@ -84,7 +84,7 @@
     <div class="text-center" style="width: 100%; margin-top: 30px">
         @if(App\Models\ActivityRegistration::where( 'activityId', '=', $activ->ID)->exists() &&
  App\Models\ActivityRegistration::where('userId', '=', \Illuminate\Support\Facades\Auth::user()->id)->exists())
-            <form action="/signOutForActivity" method="post">
+            <form action="/" method="post">
                 @csrf
                 <button class="btn btn-primary" type="submit" disabled style="width: 150px; height: 50px;">u bent al ingeschreven</button>
             </form>
@@ -97,7 +97,4 @@
             </form>
         @endif
     </div>
-<div class="text-center" style="width: 100%; margin-top: 30px">
-    <button class="btn btn-primary" type="submit" style="width: 150px; height: 50px;">Aanmelden</button>
-</div>
 @endsection
