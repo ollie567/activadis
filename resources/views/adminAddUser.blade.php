@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <label for="definition">email</label>
-                <input type="text" class="form-control" name="email">
+                <input type="email" class="form-control" name="email">
             </div>
             <div class="form-group">
                 <label for="price">wachtwoord</label>
@@ -19,7 +19,7 @@
                 <label for="price">is admin</label>
                 <input type="text" class="form-control" name="is_admin">
             </div>
-           
+
 
             <button type="submit" class="btn btn-primary mb-2">Maak gebruiker aan</button>
 
