@@ -24,7 +24,6 @@
                         <th scope="col">email</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
                     </tr>
                     </thead>
 
@@ -37,9 +36,6 @@
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td><a>
-                                    <button class="btn btn-primary" type="submit">info</button>
-                                </a></td>
                             <td><a >
                                     <button class="btn btn-secondary" type="submit">aanpassen</button>
                                 </a></td>
