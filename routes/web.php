@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ActiviteitController;
-
+use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +53,8 @@ Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
 Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);
 Route::post('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
 
+Route::get('/addUser/add', [UserController::class, 'addUser']);
+
 //Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
 
 Auth::routes();
@@ -84,6 +86,10 @@ Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/adminActivityUpdate', function () {
         return view('adminActivityUpdate');
+    });
+
+    Route::get('/adminAddUser', function () {
+        return view('adminAddUser');
     });
 });
 
