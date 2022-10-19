@@ -11,22 +11,22 @@ class ActiviteitController extends Controller
     public function addActiviteit(Request $request)
     {
         // Aanmaken nieuw contact inzending
-        $newbooking = new Activiteit();
+        $addactiviteit = new Activiteit();
         // Vullen van de contact variabelen
 
-        $newbooking->activiteitnaam = $request->naam;
-        $newbooking->activiteitlocatie = $request->locatie;
-        $newbooking->activeitomschrijving = $request->omschrijving;
-        $newbooking->activeiteten = $request->eten;
-        $newbooking->activiteitmindeelnemers = $request->mindeelnemers;
-        $newbooking->activiteitmaxdeelnemers = $request->maxdeelnemers;
-        $newbooking->activiteitkosten = $request->kosten;
-        $newbooking->activiteitbenodigheden = $request->benodigheden;
-        $newbooking->activiteitbegintijd = $request->btijd;
-        $newbooking->activiteiteindtijd = $request->etijd;
-        $newbooking->activiteitafbeelding = $request->afbeelding;
+        $addactiviteit->activiteitnaam = $request->naam;
+        $addactiviteit->activiteitlocatie = $request->locatie;
+        $addactiviteit->activeitomschrijving = $request->omschrijving;
+        $addactiviteit->activeiteten = $request->eten;
+        $addactiviteit->activiteitmindeelnemers = $request->mindeelnemers;
+        $addactiviteit->activiteitmaxdeelnemers = $request->maxdeelnemers;
+        $addactiviteit->activiteitkosten = $request->kosten;
+        $addactiviteit->activiteitbenodigheden = $request->benodigheden;
+        $addactiviteit->activiteitbegintijd = $request->btijd;
+        $addactiviteit->activiteiteindtijd = $request->etijd;
+        $addactiviteit->activiteitafbeelding = $request->afbeelding;
         // Opslaan in de databasebooking
-        $newbooking->save();
+        $addactiviteit->save();
 
         // Terugsturen met succes bericht
         return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
@@ -35,17 +35,16 @@ class ActiviteitController extends Controller
     public function deleteActiviteit(Request $request)
     {
         // Aanmaken nieuw contact inzending
-        $newbooking = new Activiteit();
+        $deleteactiviteit = new Activiteit();
         // Vullen van de contact variabelen
-        $newbooking->ID = $request->id;
+        $deleteactiviteit->ID = $request->id;
         // Opslaan in de databasebooking
-//        $newbooking->delete();
-        $newbooking::where('ID', '=', $request->id)->delete();
+        $deleteactiviteit::where('ID', '=', $request->id)->delete();
 
         // Terugsturen met succes bericht
         return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
     }
-    
+
 }
 
 
