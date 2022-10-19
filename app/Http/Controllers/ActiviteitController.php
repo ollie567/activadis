@@ -45,29 +45,7 @@ class ActiviteitController extends Controller
         // Terugsturen met succes bericht
         return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
     }
-
-    public function editActiviteit(Request $request)
-    {
-        // Aanmaken nieuw contact inzending
-        $newbooking = new Activiteit();
-        // Vullen van de contact variabelen
-        $newbooking->activiteitnaam = $request->naam;
-        $newbooking->activiteitlocatie = $request->locatie;
-        $newbooking->activeitomschrijving = $request->omschrijving;
-        $newbooking->activeiteten = $request->eten;
-        $newbooking->activiteitmindeelnemers = $request->mindeelnemers;
-        $newbooking->activiteitmaxdeelnemers = $request->maxdeelnemers;
-        $newbooking->activiteitkosten = $request->kosten;
-        $newbooking->activiteitbenodigheden = $request->benodigheden;
-        $newbooking->activiteitbegintijd = $request->btijd;
-        $newbooking->activiteiteindtijd = $request->etijd;
-        $newbooking->activiteitafbeelding = $request->afbeelding;
-        // Opslaan in de databasebooking
-        $newbooking->update()->where('ID', $request->id);
-
-        // Terugsturen met succes bericht
-        return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
-    }
+    
 }
 
 

@@ -51,7 +51,7 @@ Route::get('/userActivityDetail', function () {
 
 Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
 Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);
-Route::get('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
+Route::post('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
 
 //Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
 
