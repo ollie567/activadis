@@ -92,6 +92,10 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/adminAddUser', function () {
         return view('adminAddUser');
     });
+
+    Route::get('/register', function () {
+        return view('register');
+    });
 });
 
 

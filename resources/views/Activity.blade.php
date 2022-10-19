@@ -18,7 +18,7 @@
                             <th scope="col">title</th>
                             <th scope="col">locatie</th>
                             <th scope="col">omschrijving</th>
-                            <th scope="col">aantal deelnemers</th>
+                            <th scope="col">deelnemers</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -26,16 +26,17 @@
 
 
                 @foreach($activiteiten as $activ)
-                    <?php
-                    $activiteiten = DB::table('activiteiten')->where('ID', $id)->get();
-                    ?>
                         <tbody class="table-group-divider">
                             <tr>
                                 <td><img src="{{$activ->activiteitafbeelding}}" class="card-img-top" style="height: 120px; width: 200px;" alt="attraction"></td>
                                 <td>{{$activ->activiteitnaam}}</td>
                                 <td>{{$activ->activiteitlocatie}}</td>
                                 <td>{{$activ->activeitomschrijving}}</td>
-                                <td>5 vd 15</td>
+                                <td>
+                                    <a href="/register?id={{$activ->ID}}">
+                                      <button class="btn btn-primary">Inschrijvingen</button>
+                                    </a>
+                                </td>
                                 <td><a href="/userActivityDetail?id={{$activ->ID}}"><button class="btn btn-primary" type="submit">info</button></a></td>
 
                             </tr>
