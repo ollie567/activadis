@@ -8,7 +8,7 @@
         ?>
         @foreach($detail as $activ)
 
-            <form action="/activiteit/update" method="get">
+            <form action="/activiteit/update" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="price">afbeelding link</label>

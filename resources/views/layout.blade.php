@@ -10,6 +10,12 @@
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="https://kit.fontawesome.com/0d2d2f5253.js" crossorigin="anonymous"></script>
+    <style>
+        html
+        {
+            overflow-x: hidden !important;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -102,6 +108,12 @@
                     @else
                         <li class="nav-item active">
                             <a class="nav-link" href="/logout">Uitloggen <span class="sr-only">(current)</span></a>
+                        </li>
+                    @endif
+
+                    @if(\Illuminate\Support\Facades\Auth::check() === true)
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">{{\Illuminate\Support\Facades\Auth::user()->name}}<span class="sr-only">(current)</span></a>
                         </li>
                     @endif
 {{--                @if(\Illuminate\Support\Facades\Auth::check() === true)--}}

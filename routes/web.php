@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ActiviteitController;
+
 use App\Http\Controllers\ActivityRegistrationController;
+
+use App\Http\Controllers\UserController;
 
 
 use App\Http\Controllers\SessionController;
@@ -52,8 +55,17 @@ Route::get('/userActivityDetail', function () {
 //routes die functies uit controllers aanroepen
 Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
 Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);
+
 Route::get('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
 Route::post('/signUpForActivity', [ActivityRegistrationController::class, 'store']);
+
+Route::post('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
+
+Route::get('/addUser/add', [UserController::class, 'addUser']);
+Route::get('/user/delete', [UserController::class, 'deleteUser']);
+
+//Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
+
 
 Auth::routes();
 
@@ -85,6 +97,14 @@ Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/adminActivityUpdate', function () {
         return view('adminActivityUpdate');
+    });
+
+    Route::get('/adminAddUser', function () {
+        return view('adminAddUser');
+    });
+
+    Route::get('/register', function () {
+        return view('register');
     });
 });
 

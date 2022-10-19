@@ -23,6 +23,7 @@
                             <th scope="col">title</th>
                             <th scope="col">locatie</th>
                             <th scope="col">omschrijving</th>
+                            <th scope="col">deelnemers</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                             <th scope="col"></th>
@@ -41,6 +42,11 @@
                                 <td>{{$activ->activiteitnaam}}</td>
                                 <td>{{$activ->activiteitlocatie}}</td>
                                 <td>{{$activ->activeitomschrijving}}</td>
+                                <td>
+                                    <a href="/register?id={{$activ->ID}}">
+                                        <button class="btn btn-primary">Inschrijvingen</button>
+                                    </a>
+                                </td>
                                 <td><a href="/userActivityDetail?id={{$activ->ID}}"><button class="btn btn-primary" type="submit">info</button></a></td>
                                 <td><a href="/adminActivityUpdate?id={{$activ->ID}}"><button class="btn btn-secondary" type="submit">aanpassen</button></a></td>
                                 <td>

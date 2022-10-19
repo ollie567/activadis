@@ -9,7 +9,7 @@
             $users = DB::table('users')->get();
             ?>
             <div class="text-right " style="width: 100%">
-                <a>
+                <a href="/adminAddUser">
                     <button class="btn btn-warning">Toevoegen</button>
                 </a>
             </div>
@@ -44,7 +44,10 @@
                                     <button class="btn btn-secondary" type="submit">aanpassen</button>
                                 </a></td>
                             <td>
-                                <button type="button" class="btn btn-danger">verwijder</button>
+                                <form action="/user/delete">
+                                    <input type="hidden" value="{{$user->id}}" name="id">
+                                    <button type="submit" class="btn btn-danger">verwijder</button>
+                                </form>
                             </td>
 
                         </tr>
