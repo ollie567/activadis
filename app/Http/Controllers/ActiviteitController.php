@@ -8,11 +8,12 @@ use App\Models\Activiteit;
 
 class ActiviteitController extends Controller
 {
+    //deze functie plaats een activiteit in de database
     public function addActiviteit(Request $request)
     {
-        // Aanmaken nieuw contact inzending
+        // het aanroepen van het activiteit model
         $addactiviteit = new Activiteit();
-        // Vullen van de contact variabelen
+        // Vullen van de activiteit variabelen
 
         $addactiviteit->activiteitnaam = $request->naam;
         $addactiviteit->activiteitlocatie = $request->locatie;
@@ -25,24 +26,23 @@ class ActiviteitController extends Controller
         $addactiviteit->activiteitbegintijd = $request->btijd;
         $addactiviteit->activiteiteindtijd = $request->etijd;
         $addactiviteit->activiteitafbeelding = $request->afbeelding;
-        // Opslaan in de databasebooking
+        // Opslaan in de database
         $addactiviteit->save();
 
         // Terugsturen met succes bericht
-        return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
+        return redirect('/adminActivityView')->with('message', 'activiteit toegevoegd');
     }
 
+    //deze functie verwijdert de gekozen activiteit
     public function deleteActiviteit(Request $request)
     {
-        // Aanmaken nieuw contact inzending
+        // aanroepen van het activiteit model
         $deleteactiviteit = new Activiteit();
-        // Vullen van de contact variabelen
-        $deleteactiviteit->ID = $request->id;
-        // Opslaan in de databasebooking
+        // verwijder uit de database
         $deleteactiviteit::where('ID', '=', $request->id)->delete();
 
         // Terugsturen met succes bericht
-        return redirect('/adminActivityView')->with('message', 'Uw booking was succesful');
+        return redirect('/adminActivityView')->with('message', 'activiteit gedeleted');
     }
 
 }
