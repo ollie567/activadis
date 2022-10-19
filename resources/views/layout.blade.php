@@ -104,6 +104,12 @@
                             <a class="nav-link" href="/logout">Uitloggen <span class="sr-only">(current)</span></a>
                         </li>
                     @endif
+
+                    @if(\Illuminate\Support\Facades\Auth::check() === true)
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">{{\Illuminate\Support\Facades\Auth::user()->name}}<span class="sr-only">(current)</span></a>
+                        </li>
+                    @endif
 {{--                @if(\Illuminate\Support\Facades\Auth::check() === true)--}}
 {{--                    <li class="nav-item active d-flex align-items-center m-lg-2">--}}
 {{--                        <a href="/" class="btn btn-secondary">--}}
