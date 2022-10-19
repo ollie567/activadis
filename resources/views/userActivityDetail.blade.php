@@ -80,6 +80,11 @@
         @endforeach
     </div>
     <div class="text-center" style="width: 100%; margin-top: 30px">
-        <button class="btn btn-primary" type="submit" style="width: 150px; height: 50px;">Aanmelden</button>
+        <form action="/signUpForActivity" method="post">
+            @csrf
+            <input type="hidden" name="activityId" value="{{$activ->ID}}">
+            <input type="hidden" name="userId" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
+            <button class="btn btn-primary" type="submit" style="width: 150px; height: 50px;">Aanmelden</button>
+        </form>
     </div>
 @endsection

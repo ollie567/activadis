@@ -10,7 +10,7 @@ class SessionController extends Controller
 
     public function store()
     {
-        // Vullen van de user variabelen
+        // Vullen van de gebruiker variabelen
         $attributes = request()->validate( [
             'email' => 'required|email',
             'password' => 'required'

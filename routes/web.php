@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ActiviteitController;
+use App\Http\Controllers\ActivityRegistrationController;
 
 
 use App\Http\Controllers\SessionController;
@@ -52,6 +53,7 @@ Route::get('/userActivityDetail', function () {
 Route::get('/activiteit/add', [ActiviteitController::class, 'addActiviteit']);
 Route::get('/activiteit/delete', [ActiviteitController::class, 'deleteActiviteit']);
 Route::get('/activiteit/edit', [ActiviteitController::class, 'editActiviteit']);
+Route::post('/signUpForActivity', [ActivityRegistrationController::class, 'store']);
 
 //Route::post('/activiteit/add', [\App\Http\Controllers\ActiviteitController::class, 'addActiviteit']);
 
